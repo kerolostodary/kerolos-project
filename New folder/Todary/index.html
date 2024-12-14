@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./srtle.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1 class="py-2 my-2 text-center text-white position-relative">
+        Bookmarker
+      </h1>
+      <div class="bord"></div>
+      <div class="w-100 my-1">
+        <div
+          class="text-center p-5 d-flex align-items-center justify-content-center text-book"
+        >
+          <i class="fa-solid fa-bookmark icon-1"></i>
+          <h2>Bookmark your favorite sites</h2>
+          <i class="fa-solid fa-bookmark icon-2"></i>
+        </div>
+        <div class="p-3">
+          <label for="siteName"
+            ><i class="fa-solid fa-book"></i> Site Name</label
+          >
+          <input
+            id="siteName"
+            class="form-control"
+            placeholder="Bookmark Name"
+            type="text"
+            name="siteName"
+            id="siteName"
+          />
+
+          <label for="siteUrl"><i class="fa-solid fa-link"></i> Site URL</label>
+          <input
+            id="siteUrl"
+            class="form-control"
+            placeholder="Website URL"
+            type="text"
+            name="siteUrl"
+            id="siteUrl"
+            oninput="validateUrl(this.value)"
+          />
+          <p class="alert alert-danger d-none" id="urlAlert">
+            Url Must Be Start with https or www.
+          </p>
+          <div class="text-center my-3">
+            <button
+              onclick="addBook()"
+              class="btn px-5 text-center button"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table mt-4 text-center bg-light shadow p-3">
+        <thead>
+          <tr>
+            <th class="text-capitalize">index</th>
+            <th class="text-capitalize">website name</th>
+            <th class="text-capitalize">visit</th>
+            <th class="text-capitalize">delet</th>
+          </tr>
+        </thead>
+        <tbody id="table"></tbody>
+      </table>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
